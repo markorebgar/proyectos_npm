@@ -1,36 +1,100 @@
-
-
 <template>
-  <div>
-  <h1>Administración de la tienda</h1>
-  <p>Proyecto Tienda-da2-vue</p>
-  <hr>
-  <Tablero :cities="paisajes"/>
-  </div>
+  <!-- <v-app>
+    <v-main>
+      <h1>Mi aplicación con Vuetify</h1>
+      <v-btn color="primary"> Guardar </v-btn>
+    </v-main>
+  </v-app>-->
+  <v-app>
+    <v-app-bar color="primary">
+      <v-toolbar-title> Tienda DA2 </v-toolbar-title>
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+    </v-app-bar>
 
+    <v-navigation-drawer v-model="drawer">
+      <v-list>
+        <v-list-item title="Inicio" />
+        <v-list-item title="Productos" />
+        <v-list-item title="Pedidos" />
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+      <v-container>
+        <h1>Bienvenido a la tienda</h1>
+        <v-row>
+          <v-col cols="4">
+            <v-card>
+              <v-card-title>Producto 1</v-card-title>
+            </v-card>
+          </v-col>
+          <v-col cols="4">
+            <v-card>
+              <v-card-title>Producto 2</v-card-title>
+            </v-card>
+          </v-col>
+          <v-col cols="4">
+            <v-card>
+              <v-card-title>Producto 3</v-card-title>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
+
 <script>
-import { listaPaisajes } from './data/paisajes';
-import BaseButton from './components/icons/BaseButton.vue';
-import Tablero from './components/Tablero.vue';
+// Importar componentes y ficheros de datos
 
 export default {
-  components: {BaseButton, Tablero},
-  data(){
-    return{
-      paisajes: listaPaisajes,
-    }
+  name: "App",
+  components: {},
+  data() {
+    return {
+      drawer: true,
+      // declarar los datos a utilizar
+    };
   },
+
   methods: {
-    saludar(){
-      console.log("saludar desde app");
-      alert("Hola desde Vue");
+    eliminarProducto(id) {
+      this.productos = this.productos.filter((p) => p.id !== id);
     },
-    despedirse(){
-      alert("Adiós desde Vue");
+    agregarProducto() {
+      if (this.nuevoProducto.trim() !== "") {
+        this.productos.push(this.nuevoProducto);
+        this.nuevoProducto = "";
+      }
+    },
+    duplicarProducto(product) {
+      const nuevo = {
+        ...product,
+        id: Date.now(),
+      };
+      this.productos.push(nuevo);
+    },
+  },
+  computed: {
+    totalProductos() {
+      return this.productos.length;
     },
   },
 };
 </script>
+
 <style scoped>
+.layout {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
 </style>
