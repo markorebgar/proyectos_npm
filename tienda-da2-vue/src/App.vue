@@ -21,7 +21,7 @@
     <v-main>
       <v-container>
         <h1>Bienvenido a la tienda</h1>
-        <v-row>
+        <!--<v-row>
           <v-col cols="4">
             <v-card>
               <v-card-title>Producto 1</v-card-title>
@@ -37,7 +37,11 @@
               <v-card-title>Producto 3</v-card-title>
             </v-card>
           </v-col>
-        </v-row>
+        </v-row>-->
+
+        <ProductList :productos="productosIni" @delete-product="eliminarProducto"
+          @duplicate-product="duplicarProducto" />
+
       </v-container>
     </v-main>
   </v-app>
@@ -45,24 +49,27 @@
 
 <script>
 // Importar componentes y ficheros de datos
+import { productosIniciales } from '@/data/productos';
+import ProductList from './components/ProductList.vue';
 
 export default {
   name: "App",
-  components: {},
+  components: { ProductList },
   data() {
     return {
       drawer: true,
+      productosIni: productosIniciales,
       // declarar los datos a utilizar
     };
   },
 
   methods: {
     eliminarProducto(id) {
-      this.productos = this.productos.filter((p) => p.id !== id);
+      this.productosIni = this.productosIni.filter((p) => p.id !== id);
     },
     agregarProducto() {
       if (this.nuevoProducto.trim() !== "") {
-        this.productos.push(this.nuevoProducto);
+        this.productosIni.push(this.nuevoProducto);
         this.nuevoProducto = "";
       }
     },
@@ -71,12 +78,12 @@ export default {
         ...product,
         id: Date.now(),
       };
-      this.productos.push(nuevo);
+      this.productosIni.push(nuevo);
     },
   },
   computed: {
     totalProductos() {
-      return this.productos.length;
+      return this.productosIni.length;
     },
   },
 };
