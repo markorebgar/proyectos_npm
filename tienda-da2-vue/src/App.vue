@@ -38,10 +38,8 @@
             </v-card>
           </v-col>
         </v-row>-->
-
         <ProductList :productos="productosIni" @delete-product="eliminarProducto"
           @duplicate-product="duplicarProducto" />
-
       </v-container>
     </v-main>
   </v-app>
