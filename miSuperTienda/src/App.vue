@@ -6,7 +6,7 @@ import AppFooter from "@/components/layout/AppFooter.vue";
 <template>
   <v-app>
     <AppHeader />
-    <v-main>
+    <v-main style="background-color: lightskyblue;   width: 100%;">
       <router-view />
     </v-main>
     <AppFooter />
@@ -19,3 +19,8 @@ export default {
   components: { AppHeader, AppFooter },
 }
 </script>
+<style>
+body {
+  background-color: lightskyblue;
+}
+</style>
