@@ -6,13 +6,14 @@ const mensaje = ref("Bienvenido a la tienda DA2");
 
 
     <div class="position-relative container" style="background-color: black;
+    height: 500px;
                     padding-top: 10%;
                     padding-bottom: 10%;
                     background-image: url('https://preview.redd.it/n3vbo9m9kkyc1.png?width=640&crop=smart&auto=webp&s=22ca9bd36b7f0fb3db19a25d370a2e8977efa9a0');
                     background-repeat: repeat;
                     overflow: hidden;
                     margin-top: 4%;
-                    border: 50px solid transparent;
+                    border: 30px solid transparent;
                     border-image-source: url('https://media.istockphoto.com/id/1415372318/es/vector/pixel-minecraft-estilo-obsidiana-bloque-fondo-concepto-de-juego-pixelado-sin-costuras.jpg?s=170667a&w=0&k=20&c=MSlhUW-uZMQDYCyVBo672hrS8Lasq3Tp0FWLRZrDvME=');
                     border-image-slice: 60;
                     border-image-repeat: round;">
@@ -28,7 +29,6 @@ const mensaje = ref("Bienvenido a la tienda DA2");
             </h5>
         </div>
     </div>
-
 
 
     <v-btn color="primary" to="/productos"> Ver productos </v-btn>

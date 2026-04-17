@@ -1,3 +1,8 @@
+
+
+
+
+
 export const categoriasIniciales = [
   { id: 1, nombre: "Minerales"},
   { id: 2, nombre: "Armas"},
@@ -5,3 +10,5 @@ export const categoriasIniciales = [
   { id: 4, nombre: "Animales"},
   { id: 5, nombre: "Especiales"},
 ];
+
+
