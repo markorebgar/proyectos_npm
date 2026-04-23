@@ -2,9 +2,14 @@ import { productosIniciales } from "@/data/productos";
 
 let products = [...productosIniciales];
 
-export function getProducts() {
-  return products;
-}
+export const getProducts = async () => {
+ const response = await fetch("../public/products.json");
+ if (!response.ok) {
+ throw new Error("Error al cargar productos");
+ }
+ return await response.json();
+};
+
 
 export function getProductById(id) {
   return products.find((p) => p.id === id);

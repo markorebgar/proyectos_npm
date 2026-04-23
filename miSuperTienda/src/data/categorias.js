@@ -1,8 +1,3 @@
-
-
-
-
-
 export const categoriasIniciales = [
   { id: 1, nombre: "Minerales"},
   { id: 2, nombre: "Armas"},

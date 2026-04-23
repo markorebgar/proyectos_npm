@@ -31,7 +31,7 @@ const mensaje = ref("Bienvenido a la tienda DA2");
     </div>
 
 
-    <v-btn color="primary" to="/productos"> Ver productos </v-btn>
+    <v-btn color="primary" to="/categorias"> Ver categorias </v-btn>
 
 </template>
 <style>

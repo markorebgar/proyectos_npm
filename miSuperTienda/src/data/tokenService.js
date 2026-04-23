@@ -1,7 +1,7 @@
 var API_BASE = "http://localhost:8000/api/v1/"
 
 
-async function getToken (correo, password) {  
+async function getToken () {  
 var url = API_BASE+"auth/login";
 
 const token = await fetch (url, {
@@ -10,8 +10,8 @@ const token = await fetch (url, {
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-        username: correo,
-        password: password
+        username: "admin@tienda.com",
+        password: "Password"
     })
 })
 var data;

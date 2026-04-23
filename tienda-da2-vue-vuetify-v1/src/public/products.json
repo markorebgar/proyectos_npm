@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Portátil Lenovo",
+        "price": 699,
+        "description": "Portátil para uso diario",
+        "category": "Informática",
+        "image": "https://dummyimage.com/300x200/bbc/fa0"
+    },
+    {
+        "id": 2,
+        "title": "Ratón inalámbrico",
+        "price": 25,
+        "description": "Ratón ergonómico",
+        "category": "Accesorios",
+        "image": "https://dummyimage.com/300x200/bbc/fa0"
+    },
+    {
+        "id": 3,
+        "title": "Teclado mecánico",
+        "price": 59,
+        "description": "Teclado con retroiluminación",
+        "category": "Accesorios",
+        "image": "https://dummyimage.com/300x200/bbc/fa0"
+    }
+]

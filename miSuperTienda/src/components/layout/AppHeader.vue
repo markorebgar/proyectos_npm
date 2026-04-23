@@ -11,7 +11,7 @@
 <style>
 @font-face {
     font-family: "Minecraft";
-    src: url("../webfonts/minecraftfont.woff") format("woff");
+    src: url("../../assets/webfonts/minecraftfont.woff") format("woff");
 }
 
 .fondoCabecera {
