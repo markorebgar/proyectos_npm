@@ -1,13 +1,19 @@
 <script setup>
-import { ref, computed } from "vue";
+import { productosIniciales } from "./../../data/productos";
+import { ref, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
-const products = ref([
-    { id: 1, name: "Portátil", brand: "Lenovo", price: 799 },
-    { id: 2, name: "Monitor", brand: "Samsung", price: 199 },
-    { id: 3, name: "Teclado", brand: "Logitech", price: 49 },
-    { id: 4, name: "Ratón", brand: "Logitech", price: 29 },
-]);
+const products = ref([]);
+
+
+onMounted(async () => {
+    console.log("Mounted ejecutado")
+    const data = await productosIniciales();
+    console.log(data)
+    products.value = data;
+
+});
+
 const filteredProducts = computed(() => {
     let result = [...products.value];
     if (route.query.marca) {
@@ -29,7 +35,7 @@ const filteredProducts = computed(() => {
         <h1>Productos</h1>
         <p>Marca: {{ route.query.marca || "todas" }}</p>
         <p>Orden: {{ route.query.orden || "sin ordenar" }}</p>
-        <v-btn class="mr-2" :to="{ path: '/productos', query: { marca: 'Logitech' } }">
+        <v-btn class="mr-2" :to="{ path: '/productos', query: { marca: 'Mojang' } }">
             Filtrar Logitech
         </v-btn>
         <v-btn class="mr-2" :to="{ path: '/productos', query: { orden: 'precioAsc' } }">
@@ -38,7 +44,11 @@ const filteredProducts = computed(() => {
         <v-row class="mt-4">
             <v-col v-for="product in filteredProducts" :key="product.id" cols="12" md="4">
                 <v-card>
+                    <v-img
+                        :src="product.image || 'https://aramar.com/wp-content/uploads/2017/05/aramar-suministros-para-el-vidrio-cristal-sin-imagen-disponible.jpg'"
+                        height="200" />
                     <v-card-title>{{ product.name }}</v-card-title>
+
                     <v-card-text>
                         Marca: {{ product.brand }}<br />
                         Precio: {{ product.price }} €

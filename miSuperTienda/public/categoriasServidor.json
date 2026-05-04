@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Armadura",
+        "description": "Armadura de mineca",
+        "image": "/assets/images/categories/No_Image_Available.jpg"
+    },
+    {
+        "name": "Armas",
+        "description": "Armas de minecraft: hachas, espadas...",
+        "image": "/assets/images/categories/armas.png"
+    },
+    {
+        "name": "Minerales",
+        "description": "Diamantes, carbón, redstone...",
+        "image": "/assets/images/categories/minerales.webp"
+    },
+    {
+        "name": "Comida",
+        "description": "Chuletas de cerdo ñam ñam",
+        "image": "/assets/images/categories/comida.webp"
+    },
+    {
+        "name": "Hytale",
+        "description": "Cositas de la competencia",
+        "image": "https://retrogems.fr/wp-content/uploads/2026/01/hytale-logo.jpg"
+    },
+    {
+        "name": "Bloques",
+        "description": "Bloques para dejar volar la imaginación",
+        "image": "https://minecraft.wiki/images/Blocks_preview.png?b6099&format=original"
+    },
+    {
+        "name": "Animales",
+        "description": "Cositas bonitas",
+        "image": "https://minecraft.wiki/images/Turtle_JE3_BE1.png?373f9&format=original"
+    },
+    {
+        "name": "Enemigo",
+        "description": "Malandrones que te matan",
+        "image": "https://minecraft.wiki/images/Warden.gif?d0f99&format=original"
+    }
+]
