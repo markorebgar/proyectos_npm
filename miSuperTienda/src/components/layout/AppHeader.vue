@@ -1,10 +1,24 @@
+<script setup>
+
+</script>
+
 <template>
     <v-app-bar class="fondoCabecera">
-        <v-app-bar-title> <a style="color: rgb(89, 171, 110); text-decoration: none; font-size: 30px;" class="mineFont"
-                href="/">MCShop</a></v-app-bar-title>
+          <router-link to="/" class="d-flex align-center" style="text-decoration: none;">
+          <v-icon size="32" class="mr-2" color="green">mdi-minecraft</v-icon>
+          </router-link>
+
+        <v-app-bar-title> 
+            <router-link style="color: rgb(89, 171, 110); text-decoration: none; font-size: 30px;" class="mineFont" to="/">MCShop</router-link>
+        </v-app-bar-title>
+
+
         <v-btn to="/" class="mineFont">Inicio</v-btn>
-        <v-btn to="/categorias" class="mineFont">Categorias</v-btn>
-        <v-btn to="/productos" class="mineFont">Productos</v-btn>
+        <v-btn to="/productos" class="mineFont">Catálogo</v-btn>
+        <v-btn to="/contacto" class="mineFont">Contacto</v-btn>
+        <v-btn to="/favoritos" class="mineFont">Favoritos</v-btn>
+
+
     </v-app-bar>
 </template>
 
@@ -15,6 +29,7 @@
 }
 
 .fondoCabecera {
+    
     background-image: url('https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/5/56/Sky1.png/revision/latest?cb=20110711205312');
     background-repeat: repeat;
 }
@@ -42,5 +57,6 @@
     font-size: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    text-decoration: none;
 }
 </style>

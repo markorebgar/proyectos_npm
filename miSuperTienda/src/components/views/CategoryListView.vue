@@ -1,47 +1,35 @@
 <script setup>
-import { ref, computed } from "vue";
+import { categoriasIniciales } from "@/data/categorias";
+import { ref, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
-const categories = ref([
-    { id: 1, nombre: "Minerales" },
-    { id: 2, nombre: "Armas" },
-    { id: 3, nombre: "Enemigos" },
-    { id: 4, nombre: "Animales" },
-    { id: 5, nombre: "Especiales" },
-]);
-const filteredCategories = computed(() => {
-    let result = [...categories.value];
-    if (route.query.orden === "nombreAsc") {
-        result.sort((a, b) => a.nombre.localeCompare(b.nombre));
-    }
-    if (route.query.orden === "nombreDesc") {
-        result.sort((a, b) => b.nombre.localeCompare(a.nombre));
-    }
-    return result;
+const categories = ref([]);
+onMounted(async () => {
+    const data = await categoriasIniciales();
+    categories.value = data;
+
 });
+
 </script>
 <template>
-    <v-container>
-        <h1>Categorias</h1>
-        <p>Orden: {{ route.query.orden || "sin ordenar" }}</p>
-        <v-btn class="mr-2" :to="{ path: '/categorias', query: { orden: 'nombreAsc' } }">
-            Ordenar Ascendente
-        </v-btn>
-        <v-btn class="mr-2" :to="{ path: '/categorias', query: { orden: 'nombreDesc' } }">
-            Ordenar Descendente
-        </v-btn>
+    <v-container class="fondoNether">
+        <h2 class="mineFont2 delineado">Categorías:</h2>
         <v-row class="mt-4">
-            <v-col v-for="category in filteredCategories" :key="category.id" cols="12" md="4">
+            <v-col v-for="category in categories" :key="category.id" cols="12" md="4">
                 <v-card>
-                    <v-card-title>{{ category.nombre }}</v-card-title>
+                        <v-img
+                        :src="category.image || 'https://aramar.com/wp-content/uploads/2017/05/aramar-suministros-para-el-vidrio-cristal-sin-imagen-disponible.jpg'"
+                        height="200" />
+                    <v-card-title>{{ category.name }}</v-card-title>
                     <v-card-text>
                         Id: {{ category.id }}<br />
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn :to="`/categorias/${category.id}`"> Ver detalle </v-btn>
+                        <v-btn :to="{ path: '/productos', query: { category: category.name} }"> Ver Productos </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>
     </v-container>
 </template>
+
