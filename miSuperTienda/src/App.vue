@@ -6,21 +6,26 @@ import AppFooter from "@/components/layout/AppFooter.vue";
 <template>
   <v-app>
     <AppHeader />
-    <v-main style="background-color: lightskyblue;   width: 100%;">
+
+    <v-main class="fondoLightBlue">
       <router-view />
     </v-main>
-    <AppFooter />
+      <AppFooter />
+
   </v-app>
+
 </template>
 
-<script>
-export default {
-  name: "App",
-  components: { AppHeader, AppFooter },
-}
-</script>
+
 <style>
-body {
+
+html, body, #app {
+  height: 100%;
   background-color: lightskyblue;
 }
+
+.fondoLightBlue{
+  background-color: lightskyblue;
+}
+
 </style>

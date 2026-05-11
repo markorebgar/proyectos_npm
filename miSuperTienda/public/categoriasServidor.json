@@ -1,40 +1,48 @@
 [
     {
+        "id": 1,
         "name": "Armadura",
         "description": "Armadura de mineca",
-        "image": "/assets/images/categories/No_Image_Available.jpg"
+        "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fe/Diamond_Armor_JE2_BE2.png/revision/latest?cb=20191220091421"
     },
     {
+        "id": 2,
         "name": "Armas",
         "description": "Armas de minecraft: hachas, espadas...",
-        "image": "/assets/images/categories/armas.png"
+        "image": "https://minecraft.wiki/images/Wooden_Sword_JE2_BE2.png?065ee"
     },
     {
+        "id": 3,
         "name": "Minerales",
         "description": "Diamantes, carbón, redstone...",
-        "image": "/assets/images/categories/minerales.webp"
+        "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/29/Diamond_Ore_JE5_BE5.png/revision/latest?cb=20210326000237"
     },
     {
+        "id": 4,
         "name": "Comida",
         "description": "Chuletas de cerdo ñam ñam",
-        "image": "/assets/images/categories/comida.webp"
+        "image": "https://tiermaker.com/images/chart/chart/comida-de-minecraft-361496/applepng.png"
     },
     {
+        "id": 5,
         "name": "Hytale",
         "description": "Cositas de la competencia",
         "image": "https://retrogems.fr/wp-content/uploads/2026/01/hytale-logo.jpg"
     },
     {
+        "id": 6,
         "name": "Bloques",
         "description": "Bloques para dejar volar la imaginación",
         "image": "https://minecraft.wiki/images/Blocks_preview.png?b6099&format=original"
     },
     {
+        "id": 7,
         "name": "Animales",
         "description": "Cositas bonitas",
         "image": "https://minecraft.wiki/images/Turtle_JE3_BE1.png?373f9&format=original"
     },
     {
+        "id": 8,
         "name": "Enemigo",
         "description": "Malandrones que te matan",
         "image": "https://minecraft.wiki/images/Warden.gif?d0f99&format=original"
